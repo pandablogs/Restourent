@@ -1,0 +1,14 @@
+const mongoose = require('mongoose')
+const config = require('../config/config')
+const userModel = require('./userModel')
+const authModel = require('./authModel')
+const contactModel = require('./contactModel')
+const menuCategoryModel = require('./MenuCategory')
+const db = {}
+db.mongoose = mongoose
+db.mongodb = config.MONGO_DB
+db.userModel = userModel
+db.authModel = authModel
+db.contactModel = contactModel
+db.menuCategoryModel = menuCategoryModel
+module.exports = db

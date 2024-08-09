@@ -1,0 +1,131 @@
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.moving-border::before,
+.moving-border::after {
+    content: "";
+    position: absolute !important;
+    inset: -0.2rem !important;
+    z-index: -1 !important;
+    background: linear-gradient(var(--angle),
+            #f35ec2, #ca4ecc, #c11ec5) !important;
+    animation: rotate 10s linear infinite !important;
+}
+
+@keyframes rotate {
+    0% {
+        --angle: 0deg !important;
+    }
+
+    100% {
+        --angle: 360deg !important;
+    }
+}
+
+.min-h-dvh-ex-header {
+    min-height: calc(100dvh - 80px);
+}
+
+.tabs::-webkit-scrollbar {
+    width: 0px;
+}
+
+.aspect-3by4 {
+    aspect-ratio: 3 / 4;
+}
+
+.heading-sm--spatial {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+// menu Css
+
+@media (max-width: 680px) {
+    .swiper-slide {
+        width: 73% !important;
+    }
+}
+
+@media (min-width: 412px) and (max-width: 430px) {
+    .swiper-slide {
+        width: 67% !important;
+    }
+}
+
+@media (min-width: 1024px) and (height: 1366px) {
+    .swiper-slide {
+        width: 28% !important;
+    }
+}
+
+@media (width: 540px) and (height: 720px) {
+    .swiper-slide {
+        width: 55% !important;
+    }
+}
+
+@media (width: 344px) and (height: 882px) {
+    .swiper-slide {
+        width: 100% !important;
+    }
+}
+
+@media (width: 1024px) and (height: 600px) {
+    .swiper-slide {
+        width: 40% !important;
+    }
+}
+
+@media (width: 1280px) {
+    .swiper-slide {
+        min-width: 40% !important;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateX(50%);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.fade {
+    opacity: 0;
+    animation: fade 0.2s linear;
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: translateX(50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.fade-out {
+    opacity: 1;
+    animation: fade-out 0.2s linear;
+}

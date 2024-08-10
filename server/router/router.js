@@ -33,4 +33,11 @@ router.get('/getAllMenuCategory',authController.authMiddelware, menuCategory.get
 router.post('/updateMenuCategory/:categoryId',authController.authMiddelware, menuCategory.updateMenuCategory);
 router.post('/deleteMenuCategory/:categoryId',authController.authMiddelware, menuCategory.deleteMenuCategory);
 
+//Customer Routes 
+router.post('/customerRegistration',authController.authRegisterCustomer);
+router.post('/customerLogin',authController.authCustomerLogin);
+router.post('/addCart',authController.customerAuthMiddelware,(req,res)=>{
+    res.send({status:true,message:"This is Valid User",data:req['_customer']});
+});
+
 module.exports = router
